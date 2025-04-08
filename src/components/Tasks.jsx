@@ -2,7 +2,7 @@ import { ChevronRightIcon, TrashIcon } from "lucide-react";
 
 function Tasks({ tasks, onTasksClick, removeTasks }) {
 	return (
-		<ul className="space-y-4 p-6 bg-purple-500 rounded-md shadow">
+		<ul className="space-y-4 p-6 bg-purple-400 rounded-md shadow">
 			{tasks.map((task) => (
 				<li key={task.id} className="flex gap-2">
 					<button
