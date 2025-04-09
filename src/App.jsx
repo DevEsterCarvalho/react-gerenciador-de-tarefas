@@ -8,19 +8,19 @@ function App() {
 			id: 1,
 			title: "Estudar Programação",
 			description: "Estudar programação para se tornar um desenvolvedor",
-			isComplited: "false",
+			isComplited: false,
 		},
 		{
 			id: 2,
 			title: "Estudar Matemática",
 			description: "Estudar matemática para se tornar um desenvolvedor",
-			isComplited: "false",
+			isComplited: false,
 		},
 		{
 			id: 3,
 			title: "Estudar Inglês",
 			description: "Estudar inglês para se tornar um desenvolvedor",
-			isComplited: "false",
+			isComplited: false,
 		},
 	]);
 
@@ -39,13 +39,23 @@ function App() {
 		setTasks(newTasks);
 	}
 
+	function addTaskSubmit(title, description) {
+		const newTask = {
+			id: tasks.length + 1,
+			title: title,
+			description: description,
+			isComplited: false,
+		};
+		setTasks([...tasks, newTask]);
+	}
+
 	return (
 		<div className="w-screen h-screen bg-purple-500 flex justify-center p-6">
 			<div className="w-[500px] space-y-4">
 				<h1 className="text-3xl text-white font-bold text-center">
 					Gerenciador de Tarefas
 				</h1>
-				<AddTask />
+				<AddTask addTaskSubmit={addTaskSubmit} />
 				<Tasks
 					tasks={tasks}
 					onTasksClick={onTasksClick}
