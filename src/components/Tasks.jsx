@@ -26,16 +26,13 @@ function Tasks({ tasks, onTasksClick, removeTasks }) {
 					</button>
 					<Button
 						onClick={() => onSeeDetailsClick(task)}
-						className="bg-purple-300 text-white p-2 rounded-md"
 					>
 						<ChevronRightIcon />
 					</Button>
 
 					<Button
 						onClick={() => removeTasks(task.id)}
-						className={` bg-purple-300 text-white p-2 rounded-md ${
-							task.remove && "line-through"
-						}`}
+		
 					>
 						<TrashIcon />
 					</Button>

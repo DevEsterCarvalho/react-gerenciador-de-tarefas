@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { Await } from "react-router-dom";
+import Title from "./components/Title";
 
 function App() {
 	const [tasks, setTasks] = useState(() => {
@@ -68,11 +69,11 @@ function App() {
 	}
 
 	return (
-		<div className="w-screen h-screen bg-purple-500 flex justify-center p-6">
+		<div className="w-screen min-h-screen bg-purple-500 flex justify-center p-6">
 			<div className="w-[500px] space-y-4">
-				<h1 className="text-3xl text-white font-bold text-center">
+				<Title className="text-3xl text-white font-bold text-center">
 					Gerenciador de Tarefas
-				</h1>
+				</Title>
 				<AddTask addTaskSubmit={addTaskSubmit} />
 				<Tasks
 					tasks={tasks}
