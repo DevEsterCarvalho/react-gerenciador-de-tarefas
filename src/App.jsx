@@ -53,7 +53,7 @@ function App() {
 		<div className="w-screen h-screen bg-purple-500 flex justify-center p-6">
 			<div className="w-[500px] space-y-4">
 				<h1 className="text-3xl text-white font-bold text-center">
-					Gerenciador de Tarefas
+					Gerenciador de Tarefas 
 				</h1>
 				<AddTask addTaskSubmit={addTaskSubmit} />
 				<Tasks
