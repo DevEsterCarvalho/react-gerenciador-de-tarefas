@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
+import { Await } from "react-router-dom";
 
 function App() {
 	const [tasks, setTasks] = useState(() => {
@@ -16,6 +17,30 @@ function App() {
 	useEffect(() => {
 		localStorage.setItem("tasks", JSON.stringify(tasks));
 	}, [tasks]);
+
+	/*chamar uma api fake para ter as tarefas
+	useEffect(() => {
+		async function fetchData() {
+			try {
+				//chamando api
+				const response = await fetch(
+					"https://jsonplaceholder.typicode.com/todos?_limit=10",
+					{
+						method: "GET",
+					}
+				);
+				//pegando os dados que a api retornou
+				const data = await response.json();
+
+				//persistindo os dados que ela retorna
+				setTasks(data);
+			} catch (error) {
+				console.error("Erro ao buscar os dados:", error);
+			}
+		}
+
+		fetchData();
+	}, []);*/
 
 	function onTasksClick(taskId) {
 		const newTasks = tasks.map((task) => {
